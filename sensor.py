@@ -44,6 +44,19 @@ class NavimowI210SensorDescription(SensorEntityDescription):
 SENSOR_DESCRIPTIONS: tuple[NavimowI210SensorDescription, ...] = (
 
     # ---- Mowing progress (type 2) ------------------------------------
+
+    # ---- Dedicated battery sensor -------------------------------
+    NavimowI210SensorDescription(
+        key="battery_i210",
+        name="Battery i210",
+        native_unit_of_measurement=PERCENTAGE,
+        state_class=SensorStateClass.MEASUREMENT,
+        device_class=SensorDeviceClass.BATTERY,
+        icon="mdi:battery",
+        is_numeric=True,
+        value_fn=lambda c: c.get("battery_i210"),
+    ),
+
     NavimowI210SensorDescription(
         key="mowing_percentage",
         name="Mowing Percentage",
@@ -191,7 +204,7 @@ class NavimowI210Sensor(
             identifiers={(DOMAIN, f"{device.id}_{SUBDEVICE_SUFFIX}")},
             name=f"{device.name} i210 Stats",
             manufacturer="Navimow / janreimen",
-            model="i210 MQTT Stats v1.1",
+            model="i210 MQTT Stats v1.1.1",
             via_device=(PARENT_DOMAIN, device.id),
         )
 

@@ -7,7 +7,7 @@ import voluptuous as vol
 
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 
-from .const import DOMAIN
+from .const import DOMAIN, VERSION
 
 
 class NavimowI210ConfigFlow(ConfigFlow, domain=DOMAIN):
@@ -34,6 +34,7 @@ class NavimowI210ConfigFlow(ConfigFlow, domain=DOMAIN):
             step_id="user",
             data_schema=vol.Schema({}),
             description_placeholders={
+                "version": VERSION,
                 "info": (
                     "Adds mowing progress sensors (percentage, area, action, "
                     "vehicle state) by subscribing to the same MQTT stream as "
