@@ -1,0 +1,14 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Navimow i210 MQTT Stats",
+        "description": "Adds mowing progress sensors (percentage, area, action, vehicle state) from the Navimow MQTT stream. No credentials needed — piggybacks on navimow_custom. Sensors appear under a dedicated sub-device.",
+        "data": {}
+      }
+    },
+    "abort": {
+      "already_configured": "Navimow i210 MQTT Stats is already configured."
+    }
+  }
+}
