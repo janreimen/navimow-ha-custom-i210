@@ -204,7 +204,7 @@ class NavimowI210Sensor(
             identifiers={(DOMAIN, f"{device.id}_{SUBDEVICE_SUFFIX}")},
             name=f"{device.name} i210 Stats",
             manufacturer="Navimow / janreimen",
-            model="i210 MQTT Stats v1.1.1",
+            model="i210 MQTT Stats v1.1.2",
             via_device=(PARENT_DOMAIN, device.id),
         )
 

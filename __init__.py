@@ -115,3 +115,8 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if unload_ok:
         hass.data[DOMAIN].pop(entry.entry_id, None)
     return unload_ok
+
+
+async def async_migrate_entry(hass, config_entry):
+    """Handle config entry migration."""
+    return True

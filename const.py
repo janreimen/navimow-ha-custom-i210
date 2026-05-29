@@ -1,7 +1,7 @@
 """Constants for Navimow Custom i210 MQTT Stats integration."""
 
 DOMAIN = "navimow_custom_i210"
-VERSION = "1.1.1"
+VERSION = "1.1.2"
 
 # Parent integration domain (andershagenhansen)
 PARENT_DOMAIN = "navimow_custom"
