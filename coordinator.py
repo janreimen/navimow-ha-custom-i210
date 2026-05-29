@@ -62,6 +62,9 @@ class NavimowI210Coordinator(DataUpdateCoordinator[dict[str, Any]]):
         """Mowing progress stats (type 2)."""
         updated: dict[str, Any] = {}
 
+        _safe_int(payload, "batteryLevel", "battery_i210", updated)
+        _safe_int(payload, "battery", "battery_i210", updated)
+
         _safe_int(payload, "mowingPercentage", "mowing_percentage", updated)
         _safe_float(payload, "mowingWeekArea", "mowing_week_area", updated)
         _safe_float(payload, "subtotalArea", "subtotal_area", updated)

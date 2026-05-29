@@ -1,7 +1,7 @@
 """Constants for Navimow Custom i210 MQTT Stats integration."""
 
 DOMAIN = "navimow_custom_i210"
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 
 # Parent integration domain (andershagenhansen)
 PARENT_DOMAIN = "navimow_custom"
@@ -23,6 +23,7 @@ VEHICLE_STATE_MAP = {
 
 # Action mapping (from MQTT action int)
 ACTION_MAP = {
+    -1: "unknown",
     0: "none",
     1: "start",
     2: "pause",
@@ -36,6 +37,7 @@ ACTION_MAP = {
 
 # Sub-action mapping (from MQTT subAction int)
 SUB_ACTION_MAP = {
+    -1: "unknown",
     0: "none",
     1: "leaving_base",
     2: "mowing",
@@ -47,7 +49,6 @@ SUB_ACTION_MAP = {
 
 # Sensors already handled by andershagenhansen — never duplicate these
 PARENT_OWNED_KEYS = {
-    "battery",
     "posture_x",
     "posture_y",
     "posture_theta",
